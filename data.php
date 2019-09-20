@@ -13,7 +13,7 @@ try {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     for ($i = 0; $i < count($result); $i++) {
             $song =$result[$i]["Song"];
-            $response = file_get_contents('https://www.googleapis.com/youtube/v3/videos?part=statistics&id='.$song.'&key=AIzaSyBvsuTz3IxNMamLZWRcN_UhdFM1zPY1VIg');
+            $response = file_get_contents('https://www.googleapis.com/youtube/v3/videos?part=statistics&id='.$song.'&key=');
             $response = json_decode($response);
             $like = $response->items[0]->statistics->likeCount;
             $view = $response->items[0]->statistics->viewCount;
